@@ -9,8 +9,27 @@
   tags:
     - pdns-admin-config
 
-- name: Run Create DB
-  shell: "{{ pdns_admin_python_path }} /var/www/powerdns-admin/create_db.py"
+- name: Create the pdns-admin MySQL databases
+  mysql_db:
+    login_user: "{{ pdns_admin_database_credentials['priv_user'] }}"
+    login_password: "{{ pdns_admin_database_credentials['priv_password'] }}"
+    login_host: "{{ pdns_admin_database_config['sqla_db_host'] }}"
+    login_port: "{{ pdns_admin_database_config['sqla_db_port'] | default('3306') }}"
+    name: "{{ pdns_admin_database_config['sqla_db_name'] }}"
+    state: present
+
+- name: Grant pdns-admin access to the MySQL databases
+  mysql_user:
+    login_user: "{{ pdns_admin_database_credentials['priv_user'] }}"
+    login_password: "{{ pdns_admin_database_credentials['priv_password'] }}"
+    login_host: "{{ pdns_admin_database_config['sqla_db_host'] }}"
+    login_port: "{{ pdns_admin_database_config['sqla_db_port'] | default('3306') }}"
+    name: "{{ pdns_admin_database_config['sqla_db_user'] }}"
+    password: "{{ pdns_admin_database_config['sqla_db_password'] }}"
+    host: "{{ pdns_admin_database_config['sqla_db_host'] }}"
+    priv: "{{ pdns_admin_database_config['sqla_db_name'] }}.*:ALL"
+    append_privs: yes
+    state: present
 
 - name: Drop PowerDNS Admin systemd file
   template:

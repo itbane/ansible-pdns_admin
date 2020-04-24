@@ -3,12 +3,14 @@ pdns_admin_packages:
   - curl
   - git
   - python
-  - libpython2.7
-  - python-dev
+  - python-configparser
+  - libpython3.5
+  - python3-dev
   - libsasl2-dev
   - build-essential
   - libmariadb2
   - libmariadb-client-lgpl-dev
   - libssl-dev
   - libldap2-dev
-  - libmysqlclient-dev
+  - libmariadbclient-dev-compat
+  - libxmlsec1-dev

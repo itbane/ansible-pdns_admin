@@ -3,7 +3,7 @@ basedir = os.path.abspath(os.path.dirname(__file__))
 
 
 {% if pdns_admin_global_config is defined %}
-{% for key, value in pdns_admin_global_config.iteritems() %}
+{% for key, value in pdns_admin_global_config.items() %}
 {% if key | upper not in ["UPLOAD_DIR"] %}
 {% if value is not mapping %}
 {% if value is sequence and value is not string %}
@@ -28,7 +28,7 @@ UPLOAD_DIR = os.path.join(basedir, 'upload')
 
 
 {% if pdns_admin_database_config is defined %}
-{% for key, value in pdns_admin_database_config.iteritems() %}
+{% for key, value in pdns_admin_database_config.items() %}
 {% if key | upper not in ["SQLALCHEMY_DATABASE_URI", "SQLALCHEMY_MIGRATE_REPO"] %}
 {% if value is not mapping %}
 {% if value is sequence and value is not string %}
@@ -79,7 +79,7 @@ SQLALCHEMY_MIGRATE_REPO = os.path.join(basedir, 'db_repository')
 
 
 {% if pdns_admin_main_config is defined %}
-{% for key, value in pdns_admin_main_config.iteritems() %}
+{% for key, value in pdns_admin_main_config.items() %}
 {% if key | upper not in ["RECORDS_ALLOW_EDIT"] %}
 {% if value is not mapping %}
 {% if value is sequence and value is not string %}
