@@ -27,6 +27,7 @@
   git:
     repo: "{{ pdns_admin_git_repo_url }}"
     dest: "{{ pdns_admin_path }}"
+    force: true
 
 - name: Install virtualenv
   apt:
@@ -36,4 +37,4 @@
   pip:
     requirements: "{{ pdns_admin_requirements_path }}"
     virtualenv: "{{ pdns_admin_python_venv_path }}"
-    virtualenv_python: python3.5
+    virtualenv_python: python3.8

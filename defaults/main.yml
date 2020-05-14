@@ -6,9 +6,9 @@ pdns_admin_root_path: /var/www
 pdns_admin_path: "{{ pdns_admin_root_path }}/powerdns-admin"
 pdns_admin_requirements_path: "{{ pdns_admin_path }}/requirements.txt"
 
-pdns_admin_conf_filename: config.py
-pdns_admin_conf_template_filename: "{{ pdns_admin_conf_filename }}.j2"
-pdns_admin_conf_filepath: "{{ pdns_admin_path }}/{{ pdns_admin_conf_filename }}"
+pdns_admin_conf_filename: default_config.py
+pdns_admin_conf_template_filename: config.py.j2
+pdns_admin_conf_filepath: "{{ pdns_admin_path }}/powerdnsadmin/{{ pdns_admin_conf_filename }}"
 
 pdns_admin_systemd_filename: powerdns-admin.service
 pdns_admin_systemd_template_filename: "{{ pdns_admin_systemd_filename }}.j2"
@@ -16,6 +16,9 @@ pdns_admin_systemd_filepath: "/etc/systemd/system/{{ pdns_admin_systemd_filename
 
 pdns_admin_python_venv_path: /opt/vens/powerdns
 pdns_admin_python_path: "{{ pdns_admin_python_venv_path }}/bin/python"
+
+pdns_admin_listen_port: 9393
+pdns_admin_listen_ip: 0.0.0.0
 
 #TODO merge all configuration
 #TODO union configuration

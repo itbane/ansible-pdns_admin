@@ -4,13 +4,14 @@ pdns_admin_packages:
   - git
   - python
   - python-configparser
-  - libpython3.5
+  - libpython3.7
   - python3-dev
   - libsasl2-dev
   - build-essential
-  - libmariadb2
-  - libmariadb-client-lgpl-dev
+  - libmariadb3
   - libssl-dev
   - libldap2-dev
   - libmariadbclient-dev-compat
   - libxmlsec1-dev
+  - pkg-config
+  - yarnpkg
