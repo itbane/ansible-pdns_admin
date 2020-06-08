@@ -103,3 +103,6 @@ SQLALCHEMY_MIGRATE_REPO = os.path.join(basedir, 'db_repository')
 
 # RECORDS ALLOWED TO EDIT
 RECORDS_ALLOW_EDIT = [ "{{ pdns_admin_main_config.records_allow_edit | join('", "') }}" ]
+# SAML Authnetication
+SAML_ENABLED = False
+SAML_ASSERTION_ENCRYPTED = True
