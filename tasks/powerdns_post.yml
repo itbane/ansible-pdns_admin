@@ -43,7 +43,7 @@
   register: tmpout
 
 - debug:
-    msg: tmpout
+    msg: "{{ tmpout }}"
 
 - name: Drop PowerDNS Admin systemd file
   template:
