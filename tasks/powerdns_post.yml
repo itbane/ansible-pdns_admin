@@ -40,6 +40,10 @@
     {{pdns_admin_python_venv_path}}/bin/flask db upgrade
     yarnpkg install --pure-lockfile
     flask assets build
+  register: tmpout
+
+- debug:
+    msg: tmpout
 
 - name: Drop PowerDNS Admin systemd file
   template:
