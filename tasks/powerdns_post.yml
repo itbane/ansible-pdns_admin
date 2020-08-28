@@ -33,13 +33,13 @@
 
 - name: Set up the flask installation
   shell: >
-    cd {{ pdns_admin_path }}
-    source {{ pdns_admin_python_venv_path }}/bin/activate
-    export FLASK_APP={{pdns_admin_path}}/powerdnsadmin/__init__.py
-    export FLASK_CONF={{pdns_admin_conf_filepath}}
-    {{pdns_admin_python_venv_path}}/bin/flask db upgrade
-    yarnpkg install --pure-lockfile
-    flask assets build
+    cd {{ pdns_admin_path }};
+    source {{ pdns_admin_python_venv_path }}/bin/activate;
+    export FLASK_APP={{pdns_admin_path}}/powerdnsadmin/__init__.py;
+    export FLASK_CONF={{pdns_admin_conf_filepath}};
+    {{pdns_admin_python_venv_path}}/bin/flask db upgrade;
+    yarnpkg install --pure-lockfile;
+    flask assets build;
   register: tmpout
 
 - debug:
