@@ -19,6 +19,7 @@ pdns_admin_python_path: "{{ pdns_admin_python_venv_path }}/bin/python"
 
 pdns_admin_listen_port: 9393
 pdns_admin_listen_ip: 0.0.0.0
+pdns_admin_workers: 4
 
 #TODO merge all configuration
 #TODO union configuration
