@@ -21,8 +21,8 @@ pdns_admin_listen_port: 9393
 pdns_admin_listen_ip: 0.0.0.0
 pdns_admin_workers: 4
 
-#TODO merge all configuration
-#TODO union configuration
+# TODO merge all configuration
+# TODO union configuration
 pdns_admin_global_config:
   wtf_csrf_enabled: true
   secret_key: CHANGEME
@@ -34,8 +34,8 @@ pdns_admin_global_config:
   log_level: DEBUG
   log_file: pdns-admin.log
   # For Docker, leave empty string
-  #log_file: ''
-  #default auth
+  # log_file: ''
+  # default auth
   basic_enabled: true
   signup_enabled: true
 
