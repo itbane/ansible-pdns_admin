@@ -1,5 +1,5 @@
 ---
-pdns_admin_packages:
+pdns_admin__packages:
   - curl
   - git
   - python
@@ -15,3 +15,9 @@ pdns_admin_packages:
   - libxmlsec1-dev
   - pkg-config
   - yarnpkg
+  - python3-pip
+
+pdns_admin__default_docker_packages:
+  - python3-docker
+  - docker-compose
+  - docker
