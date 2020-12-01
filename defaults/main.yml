@@ -29,7 +29,7 @@ pdns_admin__container_name: pdns-admin
 
 # PDNS-admin config
 pdns_admin__listen_port: 9393
-pdns_admin__listen_ip: 0.0.0.0
+pdns_admin__listen_ip: 127.0.0.1
 pdns_admin__workers: 4
 
 pdns_admin__global_config:
