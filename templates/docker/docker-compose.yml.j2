@@ -6,7 +6,7 @@ services:
     image: {{ pdns_admin__image_name }}
     container_name: {{ pdns_admin__container_name }}
     ports:
-      - 127.0.0.1:{{ pdns_admin__listen_port }}:80/tcp
+      - {{ pdns_admin__listen_ip }}:{{ pdns_admin__listen_port }}:80/tcp
     hostname: pdns-admin
     environment:
       SQLALCHEMY_DATABASE_URI: "mysql://{{ pdns_admin__database_config['sqla_db_user'] }}:{{ pdns_admin__database_config['sqla_db_password'] }}@{{ pdns_admin__database_config['sqla_db_host'] }}/{{ pdns_admin__database_config['sqla_db_name'] }}"
