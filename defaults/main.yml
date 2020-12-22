@@ -51,7 +51,6 @@ pdns_admin__global_config:
 pdns_admin__database_config:
   sqla_db_user: pdns-admin
   sqla_db_password: CHANGEME
-  sqla_db_host: your-db-server
   sqla_db_name: pdns-admin
   sqlalchemy_track_modifications: true
 

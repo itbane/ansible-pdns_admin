@@ -46,7 +46,6 @@ Role Variables
 | sqla_db_user | The database user for pdns-admin |
 | sqla_user_loginhost | The host / network from which the db accepts connection |
 | sqla_db_password | The password for the pdns-admin db user |
-| sqla_db_host | The IP/hostname of the database server |
 | sqla_db_name | The name of the database for pdns-admin |
 
 ### schema of pdns_admin__database_credentials
@@ -74,7 +73,6 @@ Example Playbook
             pdns_admin__database_config:
               sqla_db_user: pdnsa
               sqla_db_password: SupaSicretPasswurt
-              sqla_db_host: mydb-server.lan
               sqla_db_name: pdnsa
             pdns_admin__database_credentials:
               priv_user: root
