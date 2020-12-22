@@ -10,3 +10,5 @@
   include: "{{ pdns_admin__install_mode }}-install.yml"
 - name: "Include common tasks after installation (e.g. database connection)"
   include: common-postinstall.yml
+- name: flush handlers
+  meta: flush_handlers
